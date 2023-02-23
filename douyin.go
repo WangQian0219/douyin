@@ -107,4 +107,9 @@ func handleUserVideos(w http.ResponseWriter, r *http.Request) {
                 video.Title, video.Description, video.CoverURL, video.VideoURL, video.PublishTime.String())
         } else if video.Author != "Anonymous" && video.ID == userID {
             // 如果视频是某个用户上传的，并且用户已经登录，则显示该视频
-            fmt.Fprintf(w, "Title: %s\nDescription: %
+            fmt.Fprintf(w, "Title: %s\nDescription: %%s\nCover URL: %s\nVideo URL: %s\nPublish Time: %s\n\n",
+              video.Title, video.Description, video.CoverURL, video.VideoURL, video.PublishTime.String())
+        }
+        }
+        }
+                   
